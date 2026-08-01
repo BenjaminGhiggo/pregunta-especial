@@ -1,0 +1,22 @@
+{
+  "titulo": "¿Salimos a una cita?",
+  "subtitulo": "Si o no",
+  "textoAbajo": "Espero tu respuesta 💕",
+  "dias": [
+    { "emoji": "☀️", "nombre": "Domingo", "fecha": "2 Ago" },
+    { "emoji": "🍕", "nombre": "Viernes", "fecha": "7 Ago" },
+    { "emoji": "🎬", "nombre": "Sábado", "fecha": "8 Ago" }
+  ],
+  "horas": [
+    { "emoji": "🌅", "hora": "6:00 PM" },
+    { "emoji": "🍽️", "hora": "7:30 PM" },
+    { "emoji": "🌙", "hora": "9:00 PM" }
+  ],
+  "mensajeSi": "¡Sabía que dirías que sí! 💕",
+  "submensajeSi": "Prometo hacerte reír todos los días",
+  "mensajeNo": "¿Segura? 🥺",
+  "submensajeNo": "Puedo esperar, no tengo prisa...",
+  "confirmacionTitulo": "¡Cita confirmada! 🎉",
+  "confirmacionMensaje": "No llegues tarde... o sí, da igual mientras vengas 😊",
+  "adminPassword": "1234"
+}

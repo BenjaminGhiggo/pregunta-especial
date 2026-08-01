@@ -1,0 +1,93 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+site_url: https://pregunta-especial-auto.netlify.app
+
+collections:
+  - name: "config"
+    label: "Configuración"
+    files:
+      - label: "Configuración Principal"
+        name: "config"
+        file: "content/config.json"
+        fields:
+          - label: "Título Principal"
+            name: "titulo"
+            widget: "string"
+            default: "¿Salimos a una cita?"
+
+          - label: "Subtítulo"
+            name: "subtitulo"
+            widget: "string"
+            default: "Si o no"
+
+          - label: "Texto Debajo de Botones"
+            name: "textoAbajo"
+            widget: "string"
+            default: "Espero tu respuesta 💕"
+
+          - label: "Días Disponibles"
+            name: "dias"
+            widget: "list"
+            allow_add: true
+            fields:
+              - label: "Emoji"
+                name: "emoji"
+                widget: "string"
+              - label: "Nombre"
+                name: "nombre"
+                widget: "string"
+              - label: "Fecha"
+                name: "fecha"
+                widget: "string"
+
+          - label: "Horas Disponibles"
+            name: "horas"
+            widget: "list"
+            allow_add: true
+            fields:
+              - label: "Emoji"
+                name: "emoji"
+                widget: "string"
+              - label: "Hora"
+                name: "hora"
+                widget: "string"
+
+          - label: "Mensaje al Decir Sí"
+            name: "mensajeSi"
+            widget: "string"
+            default: "¡Sabía que dirías que sí! 💕"
+
+          - label: "Submensaje al Decir Sí"
+            name: "submensajeSi"
+            widget: "string"
+            default: "Prometo hacerte reír todos los días"
+
+          - label: "Mensaje al Decir No"
+            name: "mensajeNo"
+            widget: "string"
+            default: "¿Segura? 🥺"
+
+          - label: "Submensaje al Decir No"
+            name: "submensajeNo"
+            widget: "string"
+            default: "Puedo esperar, no tengo prisa..."
+
+          - label: "Título de Confirmación"
+            name: "confirmacionTitulo"
+            widget: "string"
+            default: "¡Cita confirmada! 🎉"
+
+          - label: "Mensaje de Confirmación"
+            name: "confirmacionMensaje"
+            widget: "string"
+            default: "No llegues tarde... o sí, da igual mientras vengas 😊"
+
+          - label: "Contraseña del Admin"
+            name: "adminPassword"
+            widget: "string"
+            default: "1234"
