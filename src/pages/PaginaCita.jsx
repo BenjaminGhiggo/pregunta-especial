@@ -79,22 +79,22 @@ export default function PaginaCita() {
       </div>
 
       <div className="relative z-10 w-full max-w-md mx-auto">
-        <div className="absolute -top-6 -left-10 sm:-top-10 sm:-left-20 text-6xl sm:text-8xl animate-float select-none hidden sm:block">😿</div>
-        <div className="absolute -bottom-6 -right-10 sm:-bottom-8 sm:-right-16 text-5xl sm:text-7xl animate-float-delay select-none hidden sm:block">😸</div>
+        <div className="absolute -top-4 -left-4 sm:-top-10 sm:-left-20 text-5xl sm:text-8xl animate-float select-none">😿</div>
+        <div className="absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-16 text-4xl sm:text-7xl animate-float-delay select-none">😸</div>
 
         <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-2xl w-full">
           {paso === 0 && (
             <>
-              <div className="inline-block bg-gradient-to-r from-yellow-300 to-amber-300 text-gray-800 px-5 py-2 rounded-full text-xs font-bold tracking-widest mb-6 uppercase border border-yellow-400">
+              <div className="inline-block bg-gradient-to-r from-yellow-300 to-amber-300 text-gray-800 px-4 sm:px-5 py-2 rounded-full text-xs font-bold tracking-widest mb-4 sm:mb-6 uppercase border border-yellow-400 animate-pulse">
                 PREGUNTA SERIA
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{config.titulo}</h1>
               <p className="text-gray-400 text-sm mb-8">{config.subtitulo}</p>
               <div className="flex gap-4 justify-center mb-8">
-                <button onClick={handleSi} className="px-8 sm:px-10 py-3 rounded-xl font-bold text-base sm:text-lg bg-indigo-500 text-white border-2 border-indigo-500 hover:bg-indigo-600 hover:border-indigo-600 hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                <button onClick={handleSi} className="px-8 sm:px-10 py-3 rounded-xl font-bold text-base sm:text-lg bg-indigo-500 text-white border-2 border-indigo-500 hover:bg-indigo-600 hover:border-indigo-600 hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer">
                   Sí
                 </button>
-                <button onClick={handleNo} className="px-8 sm:px-10 py-3 rounded-xl font-bold text-base sm:text-lg bg-white text-gray-800 border-2 border-gray-800 hover:bg-gray-100 transition-all duration-300 cursor-pointer">
+                <button onClick={handleNo} className="px-8 sm:px-10 py-3 rounded-xl font-bold text-base sm:text-lg bg-white text-gray-800 border-2 border-gray-800 hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
                   No
                 </button>
               </div>
@@ -114,7 +114,7 @@ export default function PaginaCita() {
                 <p className="text-gray-500 text-sm mb-3 font-medium">Elige un día:</p>
                   <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {config.dias.map((dia) => (
-                    <button key={dia.id} onClick={() => handleDia(dia)} className={`flex flex-col items-center px-4 py-3 rounded-xl border-2 transition-all duration-300 cursor-pointer ${diaSeleccionado?.id === dia.id ? 'border-indigo-500 bg-indigo-50 scale-105' : 'border-gray-200 hover:border-indigo-300'}`}>
+                    <button key={dia.id} onClick={() => handleDia(dia)} className={`flex flex-col items-center px-3 sm:px-4 py-3 rounded-xl border-2 transition-all duration-300 cursor-pointer active:scale-95 ${diaSeleccionado?.id === dia.id ? 'border-indigo-500 bg-indigo-50 scale-105 shadow-lg' : 'border-gray-200 hover:border-indigo-300 hover:shadow-md'}`}>
                       <span className="text-2xl mb-1">{dia.emoji}</span>
                       <span className="font-bold text-gray-800 text-sm">{dia.nombre}</span>
                       <span className="text-gray-500 text-xs">{dia.fecha}</span>
@@ -127,7 +127,7 @@ export default function PaginaCita() {
                   <p className="text-gray-500 text-sm mb-3 font-medium">¿A qué hora?</p>
                 <div className="grid grid-cols-3 gap-2 sm:gap-3">
                     {config.horas.map((hora) => (
-                      <button key={hora.id} onClick={() => handleHora(hora)} className={`flex flex-col items-center px-5 py-3 rounded-xl border-2 transition-all duration-300 cursor-pointer ${horaSeleccionada?.id === hora.id ? 'border-indigo-500 bg-indigo-50 scale-105' : 'border-gray-200 hover:border-indigo-300'}`}>
+                      <button key={hora.id} onClick={() => handleHora(hora)} className={`flex flex-col items-center px-4 sm:px-5 py-3 rounded-xl border-2 transition-all duration-300 cursor-pointer active:scale-95 ${horaSeleccionada?.id === hora.id ? 'border-indigo-500 bg-indigo-50 scale-105 shadow-lg' : 'border-gray-200 hover:border-indigo-300 hover:shadow-md'}`}>
                         <span className="text-xl mb-1">{hora.emoji}</span>
                         <span className="font-bold text-gray-800 text-sm">{hora.hora}</span>
                       </button>
@@ -136,7 +136,7 @@ export default function PaginaCita() {
                 </div>
               )}
               {diaSeleccionado && horaSeleccionada && (
-                <button onClick={handleConfirmar} className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                <button onClick={handleConfirmar} className="w-full py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-300 cursor-pointer animate-bounce">
                   ¡Confirmar cita! 💕
                 </button>
               )}
@@ -148,7 +148,7 @@ export default function PaginaCita() {
               <div className="inline-block bg-gradient-to-r from-pink-400 to-rose-400 text-white px-5 py-2 rounded-full text-sm font-bold tracking-wide mb-6 uppercase">
                 {config.confirmacionTitulo}
               </div>
-              <h1 className="text-2xl font-bold text-gray-800 mb-4">
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 ¡Nos vemos el {diaSeleccionado.nombre}! 💕
               </h1>
               <div className="bg-gray-50 rounded-2xl p-6 mb-6">
@@ -163,7 +163,7 @@ export default function PaginaCita() {
                 </div>
               </div>
               <p className="text-gray-500 text-sm mb-6">{config.confirmacionMensaje}</p>
-              <div className="text-4xl mb-4">🥳🎊✨</div>
+              <div className="text-3xl sm:text-4xl mb-4 animate-bounce">🥳🎊✨</div>
               <button onClick={handleReintentar} className="px-6 py-3 rounded-xl font-bold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-300 cursor-pointer">
                 Agendar otra cita
               </button>
@@ -177,7 +177,7 @@ export default function PaginaCita() {
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">{config.mensajeNo}</h1>
               <p className="text-gray-500 mb-8">{config.submensajeNo}</p>
-              <div className="text-4xl sm:text-6xl mb-6">😢💔😿</div>
+              <div className="text-4xl sm:text-6xl mb-6 animate-pulse">😢💔😿</div>
               <div className="flex gap-4 justify-center">
                 <button onClick={handleSi} className="px-5 sm:px-6 py-3 rounded-xl font-bold text-sm sm:text-base bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:scale-105 transition-all duration-300 cursor-pointer">
                   ¡Ok, acepto!
